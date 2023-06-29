@@ -1,7 +1,16 @@
 import "./globals.css";
-import { Hachi_Maru_Pop } from "next/font/google";
+import { Hachi_Maru_Pop, Rampart_One } from "next/font/google";
 
-const HachiMaruPopFont = Hachi_Maru_Pop({ weight: "400", subsets: ["latin"] });
+const HachiMaruPopFont = Hachi_Maru_Pop({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-HachiMaruPop",
+});
+const RampartOneFont = Rampart_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-RampartOne",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -15,7 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={HachiMaruPopFont.className}>{children}</body>
+      <body
+        className={`${HachiMaruPopFont.variable} ${RampartOneFont.variable} font-HachiMaruPop`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
