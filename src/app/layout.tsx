@@ -1,4 +1,7 @@
 import "./globals.css";
+import { Hachi_Maru_Pop } from "next/font/google";
+
+const HachiMaruPopFont = Hachi_Maru_Pop({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="">{children}</body>
+      <body className={HachiMaruPopFont.className}>{children}</body>
     </html>
   );
 }
